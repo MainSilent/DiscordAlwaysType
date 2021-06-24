@@ -1,10 +1,13 @@
 import time
 import requests
 
+token = ''
+channel_id = ''
+
 count = 0
-url = "https://discord.com/api/v9/channels/857466994126618645/typing"
+url = f"https://discord.com/api/v9/channels/{channel_id}/typing"
 headers = {
-  'authorization': ''
+  'authorization': token
 }
 
 while True:
@@ -15,3 +18,4 @@ while True:
 	else:
 		count += 1
 		print(f"Sent - {count}")
+	time.sleep(3)
