@@ -2,7 +2,7 @@ import time
 import requests
 
 token = ''
-channel_id = ''
+channel_id = input("Enter desired channel id: ")
 
 count = 0
 url = f"https://discord.com/api/v9/channels/{channel_id}/typing"
