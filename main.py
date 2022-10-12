@@ -1,4 +1,4 @@
-import time
+from time import sleep
 import requests
 
 token = ''
@@ -18,4 +18,4 @@ while True:
 	else:
 		count += 1
 		print(f"Sent - {count}")
-	time.sleep(3)
+	sleep(3)
