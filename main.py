@@ -13,8 +13,7 @@ headers = {
 while True:
 	response = requests.request("POST", url, headers=headers)
 	if response.status_code != 204:
-		print(response.text)
-		print("Failed")
+		print(f"Failed {response.text}")
 	else:
 		count += 1
 		print(f"Sent - {count}")
