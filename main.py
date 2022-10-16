@@ -2,15 +2,23 @@ from time import sleep
 import requests
 from os.path import exists
 
-if(not exists("token")) :
-	new_token_file = open("token", "w+")
-	new_token_file.write(input("Enter your token: "))
-	new_token_file.seek(0)
-	token = new_token_file.read()
-else:
+def token_file_create():
+	token = input("Enter your token: ")
+	if(token == ""):
+		token_file_create()
+	new_token_file = open("token", "w")
+	new_token_file.write(token)
+	return token
+
+def token_file_read():
 	token_file = open("token", "r")
 	token = token_file.read()
+	return token
 
+if(not exists("token") or open("token", "r").read() == "") :
+	token = token_file_create()
+else:
+	token = token_file_read()
 channel_id = input("Enter desired channel id: ")
 
 count = 0
