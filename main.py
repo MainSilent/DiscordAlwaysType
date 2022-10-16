@@ -1,7 +1,14 @@
 from time import sleep
 import requests
 
-token = ''
+token_file = open("token", "r+")
+if(token_file.read() == "none"):
+	token_file.seek(0)
+	token_file.truncate()
+	token_file.write(input("Enter your token: "))
+token_file.seek(0)
+token = token_file.read()
+
 channel_id = input("Enter desired channel id: ")
 
 count = 0
