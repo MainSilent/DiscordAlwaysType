@@ -14,3 +14,8 @@ Shows Discord user is typing on a given text channel
     - Channel ID can be retrieved by right clicking on the target channel, and click "Copy ID"
 7. Enjoy! 
     - Press `Ctrl+C` (`Ctrl` and `C` altogether) to stop the program.
+
+
+
+## Contributors
+- [\@jeremiaaxel](https://github.com/jeremiaaxel)

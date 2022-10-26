@@ -5,7 +5,7 @@ from os.path import exists
 
 from packages.SendRequest import SendRequest
 from packages.UserConfig import UserConfig
-from packages.file_utility import addLoggingLevel, file_create, file_read
+from packages.file_utility import add_logging_level, file_create, file_read
 
 LOGGING_FORMAT = "[%(asctime)s - %(levelname)s]: %(message)s"
 LOGGING_DATE_FORMAT = "%Y/%m/%d %H:%M:%S"
@@ -43,7 +43,7 @@ def argsparser() -> argparse.Namespace:
 
 
 def main():
-	addLoggingLevel("VERBOSE", logging.INFO - 5)
+	add_logging_level("VERBOSE", logging.INFO - 5)
 	args = argsparser()
 
 	logging.basicConfig(level=args.loglevel, format=LOGGING_FORMAT, datefmt=LOGGING_DATE_FORMAT)

@@ -32,7 +32,7 @@ def file_read(filename: str) -> tuple[bool, dict[str, str]]:
 		logging.error(e)
 		return False, {}
 
-def addLoggingLevel(levelName, levelNum, methodName=None):
+def add_logging_level(levelName, levelNum, methodName=None):
     """
 	Source: https://stackoverflow.com/a/35804945
     Comprehensively adds a new logging level to the `logging` module and the
