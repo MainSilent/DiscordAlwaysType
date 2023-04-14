@@ -23,7 +23,7 @@ class SendRequest:
         logging.info(f"You can stop the program by pressing Ctrl+C")
         try:
             while True:
-                response = requests.request("POST", self.url, headers=self.headers)
+                response = requests.post(self.url, headers=self.headers)
                 if response.status_code != 204:
                     logging.warning(f"Failed: {response.text}")
                     logging.info("Exiting program due to failed reponse")
