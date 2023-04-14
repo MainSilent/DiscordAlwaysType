@@ -11,7 +11,7 @@ class SendRequest:
     url: str = None
     headers: dict = None
     count: int = 0
-    SLEEP_TIME: int = 3
+    SLEEP_TIME: int = 10 # wait 10 seconds before sending another request to avoid spamming the API
 
     def __post_init__(self) -> None:
         self.url = f"https://discord.com/api/v9/channels/{self.user.channel_id}/typing"
@@ -30,7 +30,7 @@ class SendRequest:
                     break
                 else:
                     self.count += 1
-                    logging.verbose(f"Sent - {self.count}")
+                    logging.verbose(f"Slept for {self.SLEEP_TIME} seconds and sent {self.count} requests")
                     
                 sleep(self.SLEEP_TIME)
         except KeyboardInterrupt:
