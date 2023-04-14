@@ -2,3 +2,6 @@
 userconfig
 
 __pycache__
+# vscode
+.vs
+.vscode

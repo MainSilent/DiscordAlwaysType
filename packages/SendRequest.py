@@ -25,7 +25,9 @@ class SendRequest:
             while True:
                 response = requests.request("POST", self.url, headers=self.headers)
                 if response.status_code != 204:
-                    logging.warning(f"Failed {response.text}")
+                    logging.warning(f"Failed: {response.text}")
+                    logging.info("Exiting program due to failed reponse")
+                    break
                 else:
                     self.count += 1
                     logging.verbose(f"Sent - {self.count}")
